@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-00f0ff?style=for-the-badge" alt="Version">
-  <img src="https://img.shields.io/badge/platform-Windows_|_Linux-00f0ff?style=for-the-badge" alt="Platform">
+  <img src="https://img.shields.io/badge/platform-Windows_|_Linux_|_macOS_|_Android_|_iOS-00f0ff?style=for-the-badge" alt="Platform">
   <img src="https://img.shields.io/badge/license-Free_to_use-10b981?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/free_forever-yes-10b981?style=for-the-badge" alt="Free Forever">
 </p>
@@ -12,20 +12,11 @@
   <sub>Fast. Secure. Local. No bloat.</sub>
 </p>
 
-<p align="center">
-  <a href="https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.exe">
-    <img src="https://img.shields.io/badge/download-Windows_(.exe)-00f0ff?style=for-the-badge&logo=windows" alt="Download for Windows">
-  </a>
-  <a href="https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.deb">
-    <img src="https://img.shields.io/badge/download-Linux_(.deb)-00f0ff?style=for-the-badge&logo=linux" alt="Download for Linux">
-  </a>
-</p>
-
 ---
 
 ## What is Tunniq?
 
-Tunniq is a free desktop application that combines an **SSH terminal**, **SFTP file manager**, and **password vault** into one lightweight tool. Built for developers, sysadmins, and anyone who works with remote servers.
+Tunniq is a free application that combines an **SSH terminal**, **SFTP file manager**, and **password vault** into one lightweight tool. Built for developers, sysadmins, and anyone who works with remote servers.
 
 No subscriptions. No cloud lock-in. No telemetry. Just a fast, local tool that does its job.
 
@@ -60,20 +51,61 @@ No subscriptions. No cloud lock-in. No telemetry. Just a fast, local tool that d
 ## Download
 
 ### Windows (10+)
-- **Installer:** Download [`Tunniq.exe`](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.exe) — run the setup wizard, takes 30 seconds
-- **Portable:** Download the `.zip` version — extract and run, no installation needed
+| Type | Link | Description |
+|------|------|-------------|
+| **Installer** | [Tunniq.exe](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.exe) | Run the setup wizard, takes 30 seconds |
 
 ### Linux (Debian/Ubuntu)
-- **Package:** Download [`Tunniq.deb`](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.deb)
-  ```bash
-  sudo dpkg -i Tunniq.deb
-  sudo apt-get install -f  # install any missing dependencies
-  ```
-- **AppImage:** Download the `.AppImage` version — make executable and run
-  ```bash
-  chmod +x Tunniq.AppImage
-  ./Tunniq.AppImage
-  ```
+| Type | Link | Description |
+|------|------|-------------|
+| **.deb Package** | [Tunniq.deb](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.deb) | Native package for Debian-based distros |
+
+```bash
+# .deb installation
+sudo dpkg -i Tunniq.deb
+sudo apt-get install -f
+
+# AppImage installation
+chmod +x Tunniq.AppImage
+./Tunniq.AppImage
+```
+
+### macOS (11+)
+| Type | Link | Description |
+|------|------|-------------|
+| **.dmg** | [Tunniq.dmg](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.dmg) | Open the disk image and drag to Applications |
+
+```bash
+# .dmg installation
+open Tunniq.dmg
+# Drag Tunniq to Applications folder
+
+# .zip installation
+unzip Tunniq-mac.zip
+# Move to Applications folder
+```
+
+### Android (8.0+)
+| Type | Link | Description |
+|------|------|-------------|
+| **.apk** | [Tunniq.apk](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.apk) | Direct install, no Play Store needed |
+
+```bash
+# .apk installation
+# Enable "Install from unknown sources" in Settings
+# Open the .apk file and install
+```
+
+### iOS (14.0+)
+| Type | Link | Description |
+|------|------|-------------|
+| **.ipa** | [Tunniq.ipa](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.ipa) | Requires AltStore or similar sideloading tool |
+
+```bash
+# .ipa installation
+# Use AltStore, Sideloadly, or similar tool
+# Connect device to computer and install
+```
 
 [**Download Latest Release →**](https://github.com/NetworkingByte/tunniq/releases/latest)
 
@@ -113,6 +145,22 @@ All shortcuts are fully customizable in **Settings → Hotkeys**.
 
 ---
 
+## Platform Comparison
+
+| Feature | Windows | Linux | macOS | Android | iOS |
+|---------|---------|-------|-------|---------|-----|
+| SSH Terminal | ✅ | ✅ | ✅ | ✅ | ✅ |
+| SFTP Manager | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Password Vault | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Host Manager | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Keychain | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Snippets | ✅ | ✅ | ✅ | ✅ | ✅ |
+| GitHub Backup | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Command Palette | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Touch Optimized | — | — | — | ✅ | ✅ |
+
+---
+
 ## Support the Project
 
 Tunniq is built and maintained by a solo developer. If you find it useful, consider buying me a coffee — it keeps the project alive.
@@ -145,7 +193,7 @@ All rights reserved by **NetworkingByte Solutions**.
 
 ## Privacy
 
-- All data is stored **locally** on your machine
+- All data is stored **locally** on your device
 - **No analytics**, **no tracking**, **no phone-home**
 - Backups go only where **you** choose (local file or your GitHub repo)
 - Your vault is encrypted with **AES-256** — even we can't read it
@@ -157,8 +205,8 @@ All rights reserved by **NetworkingByte Solutions**.
 **NetworkingByte Solutions** — building practical, privacy-first tools.
 
 - 🌐 [networkingbyte.com](https://networkingbyte.com)
-- 🐛 [Report a Bug](https://tunniq.networkingbyte.com/bugs)
-- 📖 [How to Use](https://tunniq.networkingbyte.com/howtouse)
+- 🐛 [Report a Bug](https://tunniq.com/bugs)
+- 📖 [How to Use](https://tunniq.com/howtouse)
 
 ---
 
