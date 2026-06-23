@@ -65,9 +65,6 @@ No subscriptions. No cloud lock-in. No telemetry. Just a fast, local tool that d
 sudo dpkg -i Tunniq.deb
 sudo apt-get install -f
 
-# AppImage installation
-chmod +x Tunniq.AppImage
-./Tunniq.AppImage
 ```
 
 ### macOS (11+)
@@ -79,6 +76,9 @@ chmod +x Tunniq.AppImage
 # .dmg installation
 open Tunniq.dmg
 # Drag Tunniq to Applications folder
+
+##MUST DO -
+xattr -cr /Applications/Tunniq.app
 
 # .zip installation
 unzip Tunniq-mac.zip
