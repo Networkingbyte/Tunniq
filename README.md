@@ -21,6 +21,13 @@ Tunniq is a free application that combines an **SSH terminal**, **SFTP file mana
 No subscriptions. No cloud lock-in. No telemetry. Just a fast, local tool that does its job.
 
 ---
+<img width="1565" height="972" alt="Screenshot 2026-06-24 064906" src="https://github.com/user-attachments/assets/253a3bd5-5a5d-40e4-a8ee-79e886afba94" />
+
+<img width="1567" height="978" alt="Screenshot 2026-06-24 064656" src="https://github.com/user-attachments/assets/89170905-2f87-45d3-93e3-bb427a56d570" />
+
+<img width="1572" height="977" alt="Screenshot 2026-06-24 064816" src="https://github.com/user-attachments/assets/1acadf83-4696-472b-9e79-3f8a29b74dc8" />
+
+---
 
 ## Why Tunniq?
 
