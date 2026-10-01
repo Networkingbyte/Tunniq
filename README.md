@@ -119,8 +119,6 @@ xattr -cr /Applications/Tunniq.app
 ### iOS
 iOS builds are not part of this release.
 
-[**Download Latest Release →**](https://github.com/NetworkingByte/Tunniq/releases/latest)
-
 ---
 
 ## Quick Start
