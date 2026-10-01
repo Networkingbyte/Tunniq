@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-00f0ff?style=for-the-badge" alt="Version">
-  <img src="https://img.shields.io/badge/platform-Windows_|_Linux_|_macOS_|_Android_|_iOS-00f0ff?style=for-the-badge" alt="Platform">
+  <img src="https://img.shields.io/badge/version-2.0.2-00f0ff?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/platform-Windows_|_Linux_|_macOS_|_Android-00f0ff?style=for-the-badge" alt="Platform">
   <img src="https://img.shields.io/badge/license-Free_to_use-10b981?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/free_forever-yes-10b981?style=for-the-badge" alt="Free Forever">
 </p>
@@ -8,7 +8,7 @@
 <h1 align="center">⚡ Tunniq</h1>
 
 <p align="center">
-  <b>SSH & SFTP Client and Password Manager</b><br>
+  <b>SSH & SFTP Client, Password Manager and AI Terminal Assistant</b><br>
   <sub>Fast. Secure. Local. No bloat.</sub>
 </p>
 
@@ -16,7 +16,7 @@
 
 ## What is Tunniq?
 
-Tunniq is a free application that combines an **SSH terminal**, **SFTP file manager**, and **password vault** into one lightweight tool. Built for developers, sysadmins, and anyone who works with remote servers.
+Tunniq is a free application that combines an **SSH terminal**, **SFTP file manager**, **password vault** and an **AI assistant** into one lightweight tool. Built for developers, sysadmins, and anyone who works with remote servers.
 
 No subscriptions. No cloud lock-in. No telemetry. Just a fast, local tool that does its job.
 
@@ -37,14 +37,28 @@ No subscriptions. No cloud lock-in. No telemetry. Just a fast, local tool that d
 | **Privacy** | 100% local — nothing leaves your machine |
 | **Security** | AES-256 encryption at rest |
 | **Tracking** | Zero telemetry, zero analytics |
+| **AI** | Optional, uses your own API key, talks only to the provider you pick |
 | **Code** | Closed source — free to use, not to modify |
+
+---
+
+## What's new in 2.0.2
+
+- **AI side chat** — Ask about errors, commands or config without leaving the terminal. Bring your own key for **Claude**, **Gemini**, or any **OpenAI-compatible** service (OpenAI, OpenRouter, a local Ollama). Share the last 100 lines of terminal output only when you tick the box.
+- **AI Read Files mode** — Allow a server folder, tick the files the AI may read, and review its proposed edits as a diff. Nothing is written until you click **Replace all**, the originals are backed up, and **Undo** puts them back.
+- **Drag-and-drop uploads** — Drop files or whole folders onto the SFTP panel. A **Transfers** tray shows progress, speed and time left, and uploads keep running in the background when you close the panel.
+- **Two-pane Files view** — Your computer on one side, the server on the other. Drag between them to upload or download, with owner and permission columns on the server side.
+- **Clear server identity** — The Files view shows which user you are (with a **ROOT** badge when you are root), whether you can use sudo, and whether you can write in the folder you are looking at, before you try.
+- **Android** — The AI chat, plus **Upload many**: pick several files and upload them in the background with a progress list.
 
 ---
 
 ## Features
 
-- **SSH Terminal** — Multiple tabs, copy/paste, search, themes, broadcast mode
-- **SFTP File Manager** — Browse, upload, download, drag-and-drop
+- **SSH Terminal** — Multiple tabs, split panes, copy/paste, search, themes, broadcast mode
+- **SFTP File Manager** — Browse, upload, download, drag-and-drop, background transfers with progress
+- **Two-pane Files view** — Local and server side by side, like a classic SFTP commander
+- **AI Assistant** — Bring-your-own-key chat with optional, permission-based file reading and reviewed edits
 - **Password Vault** — Encrypted local storage with master passcode
 - **Host Manager** — Save servers with labels, colors, and groups
 - **Keychain** — Manage SSH keys separately from hosts
@@ -60,42 +74,41 @@ No subscriptions. No cloud lock-in. No telemetry. Just a fast, local tool that d
 ### Windows (10+)
 | Type | Link | Description |
 |------|------|-------------|
-| **Installer** | [Tunniq.exe](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.exe) | Run the setup wizard, takes 30 seconds |
+| **Installer** | [Tunniq-Setup.exe](https://github.com/NetworkingByte/Tunniq/releases/latest/download/Tunniq-Setup.exe) | Run the setup wizard, takes 30 seconds |
+| **Portable** | [Tunniq-Portable.exe](https://github.com/NetworkingByte/Tunniq/releases/latest/download/Tunniq-Portable.exe) | No install, just run it |
 
 ### Linux (Debian/Ubuntu)
 | Type | Link | Description |
 |------|------|-------------|
-| **.deb Package** | [Tunniq.deb](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.deb) | Native package for Debian-based distros |
+| **.deb Package** | [Tunniq.deb](https://github.com/NetworkingByte/Tunniq/releases/latest/download/Tunniq.deb) | Native package for Debian-based distros |
 
 ```bash
 # .deb installation
 sudo dpkg -i Tunniq.deb
 sudo apt-get install -f
-
 ```
 
 ### macOS (11+)
 | Type | Link | Description |
 |------|------|-------------|
-| **.dmg** | [Tunniq.dmg](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.dmg) | Open the disk image and drag to Applications |
+| **Apple Silicon** (M1–M4) | [Tunniq-arm64.dmg](https://github.com/NetworkingByte/Tunniq/releases/latest/download/Tunniq-arm64.dmg) | Open the disk image and drag to Applications |
+| **Intel** | [Tunniq-x64.dmg](https://github.com/NetworkingByte/Tunniq/releases/latest/download/Tunniq-x64.dmg) | Open the disk image and drag to Applications |
+
+Not sure which Mac you have? Apple menu → **About This Mac**: "Chip: Apple M…" means Apple Silicon, "Processor: Intel" means Intel.
 
 ```bash
 # .dmg installation
-open Tunniq.dmg
+open Tunniq-arm64.dmg   # or Tunniq-x64.dmg
 # Drag Tunniq to Applications folder
 
-##MUST DO -
+## MUST DO - the app is not signed with an Apple certificate
 xattr -cr /Applications/Tunniq.app
-
-# .zip installation
-unzip Tunniq-mac.zip
-# Move to Applications folder
 ```
 
 ### Android (8.0+)
 | Type | Link | Description |
 |------|------|-------------|
-| **.apk** | [Tunniq.apk](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.apk) | Direct install, no Play Store needed |
+| **.apk** | [Tunniq.apk](https://github.com/NetworkingByte/Tunniq/releases/latest/download/Tunniq.apk) | Direct install, no Play Store needed |
 
 ```bash
 # .apk installation
@@ -103,18 +116,10 @@ unzip Tunniq-mac.zip
 # Open the .apk file and install
 ```
 
-### iOS (14.0+)
-| Type | Link | Description |
-|------|------|-------------|
-| **.ipa** | [Tunniq.ipa](https://github.com/NetworkingByte/tunniq/releases/latest/download/Tunniq.ipa) | Requires AltStore or similar sideloading tool |
+### iOS
+iOS builds are not part of this release.
 
-```bash
-# .ipa installation
-# Use AltStore, Sideloadly, or similar tool
-# Connect device to computer and install
-```
-
-[**Download Latest Release →**](https://github.com/NetworkingByte/tunniq/releases/latest)
+[**Download Latest Release →**](https://github.com/NetworkingByte/Tunniq/releases/latest)
 
 ---
 
@@ -129,6 +134,16 @@ unzip Tunniq-mac.zip
 ```
 
 That's it. No configuration needed.
+
+### Using the AI assistant (optional)
+
+```
+1. In a terminal tab, click "AI" in the toolbar (✨ on Android)
+2. Open ⚙ settings, pick Claude, Gemini or an OpenAI-compatible service
+3. Paste your own API key and click "Save and test"
+4. Ask away. Tick "include terminal output" to share what's on screen
+5. Turn on "Read files" to let it read files you pick and propose edits
+```
 
 ---
 
@@ -154,17 +169,21 @@ All shortcuts are fully customizable in **Settings → Hotkeys**.
 
 ## Platform Comparison
 
-| Feature | Windows | Linux | macOS | Android | iOS |
-|---------|---------|-------|-------|---------|-----|
-| SSH Terminal | ✅ | ✅ | ✅ | ✅ | ✅ |
-| SFTP Manager | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Password Vault | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Host Manager | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Keychain | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Snippets | ✅ | ✅ | ✅ | ✅ | ✅ |
-| GitHub Backup | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Command Palette | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Touch Optimized | — | — | — | ✅ | ✅ |
+| Feature | Windows | Linux | macOS | Android |
+|---------|---------|-------|-------|---------|
+| SSH Terminal | ✅ | ✅ | ✅ | ✅ |
+| SFTP Manager | ✅ | ✅ | ✅ | ✅ |
+| Drag-and-drop upload | ✅ | ✅ | ✅ | — |
+| Background uploads with progress | ✅ | ✅ | ✅ | ✅ |
+| Two-pane Files view | ✅ | ✅ | ✅ | — |
+| AI Assistant (own API key) | ✅ | ✅ | ✅ | ✅ |
+| Password Vault | ✅ | ✅ | ✅ | ✅ |
+| Host Manager | ✅ | ✅ | ✅ | ✅ |
+| Keychain | ✅ | ✅ | ✅ | ✅ |
+| Snippets | ✅ | ✅ | ✅ | ✅ |
+| GitHub Backup | ✅ | ✅ | ✅ | ✅ |
+| Command Palette | ✅ | ✅ | ✅ | ✅ |
+| Touch Optimized | — | — | — | ✅ |
 
 ---
 
@@ -187,7 +206,7 @@ Tunniq is built and maintained by a solo developer. If you find it useful, consi
 
 ## License
 
-Tunniq is **free to use**. You may install and use it on any number of devices without restriction.
+Tunniq is **free to use**. It is **not open source**. You may install and use it on any number of devices without restriction.
 
 **You cannot:**
 - Modify, reverse engineer, or create derivative works
@@ -204,6 +223,8 @@ All rights reserved by **NetworkingByte Solutions**.
 - **No analytics**, **no tracking**, **no phone-home**
 - Backups go only where **you** choose (local file or your GitHub repo)
 - Your vault is encrypted with **AES-256** — even we can't read it
+- The AI assistant is **off until you add your own key**. Requests go straight from your device to the provider you choose (Anthropic, Google, or your own endpoint), never through us. Your key is stored encrypted on your device.
+- The AI only sees terminal output when you tick the box, and only files in folders you allow and files you select
 
 ---
 
@@ -218,6 +239,6 @@ All rights reserved by **NetworkingByte Solutions**.
 ---
 
 <p align="center">
-  <b>Free. Transparent. Local. Safe.</b><br>
+  <b>Free. Local. Private. Safe.</b><br>
   <sub>If Tunniq saves you time, consider supporting the project. It means a lot.</sub>
 </p>
